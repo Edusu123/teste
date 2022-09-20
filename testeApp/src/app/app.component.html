@@ -5,10 +5,12 @@
             <form novalidate autocomplete="off" #form="ngForm">
                 <table>
                     <tr>
-                        <td><input class="form-control form-control-lg input" name="num1" required #num1="ngModel"
-                                [(ngModel)]="service.formData.Num1"></td>
-                        <td><input class="form-control form-control-lg input" name="num2" required #num2="ngModel"
-                                [(ngModel)]="service.formData.Num2"></td>
+                        <td><input class="form-control form-control-lg input" name="num1"
+                                oninput="this.value = this.value.replace(/[^0-9 \,]/g, '').replace(/(\..*)\./g, '$1');"
+                                required #num1="ngModel" [(ngModel)]="service.formData.Num1"></td>
+                        <td><input class="form-control form-control-lg input" name="num2"
+                                oninput="this.value = this.value.replace(/[^0-9 \,]/g, '').replace(/(\..*)\./g, '$1');"
+                                required #num2="ngModel" [(ngModel)]="service.formData.Num2"></td>
                     </tr>
                     <tr>
                         <td><button class="botao" (click)="onSoma(form)">+</button></td>
