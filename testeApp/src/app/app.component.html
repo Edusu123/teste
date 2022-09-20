@@ -2,22 +2,27 @@
     <div class="fundo">
         <h1>Calculadora da THREEO</h1>
         <div class="calculadora">
-            <table>
-                <tr>
-                    <td><input class="form-control form-control-lg input"></td>
-                    <td><input class="form-control form-control-lg input"></td>
-                </tr>
-                <tr>
-                    <td><button class="botao">+</button></td>
-                    <td><button class="botao">-</button></td>
-                </tr>
-                <tr>
-                    <td><button class="botao">*</button></td>
-                    <td><button class="botao">/</button></td>
-                </tr>
-            </table>
-            <br>
-            <p class="form-control form-control-lg"></p>
+            <form novalidate autocomplete="off" #form="ngForm">
+                <table>
+                    <tr>
+                        <td><input class="form-control form-control-lg input" name="num1" required #num1="ngModel"
+                                [(ngModel)]="service.formData.Num1"></td>
+                        <td><input class="form-control form-control-lg input" name="num2" required #num2="ngModel"
+                                [(ngModel)]="service.formData.Num2"></td>
+                    </tr>
+                    <tr>
+                        <td><button class="botao" (click)="onSoma(form)">+</button></td>
+                        <td><button class="botao" (click)="onSubtracao(form)">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="botao" (click)="onMultiplicacao(form)">*</button></td>
+                        <td><button class="botao" (click)="onDivisao(form)">/</button></td>
+                    </tr>
+                </table>
+                <br>
+                <p class="form-control form-control-lg" id="result">
+                </p>
+            </form>
         </div>
     </div>
 </div>

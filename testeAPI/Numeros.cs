@@ -2,8 +2,8 @@
 {
     public class Numeros
     {
-        public decimal Num1 { get; set; }
+        public string Num1 { get; set; }
 
-        public decimal Num2 { get; set; }
+        public string Num2 { get; set; }
     }
 }
